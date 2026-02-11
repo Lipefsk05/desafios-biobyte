@@ -1,0 +1,66 @@
+{
+  "filtro": 
+  {
+    "hospitalId": "13",
+    "dataInicial": "2025-01",
+    "dataFinal": "2025-06",
+    "ctx": "CTI"
+  },
+  "dados": 
+  [
+    {
+        "descricao": "Taxa de utilização de cateter venoso central",
+        "percentil10": 26,
+        "percentil25": 40,
+        "percentil50": 51,
+        "percentil75": 61,
+        "percentil90": 70,
+        "limiteEndemico": 60,
+        "constante": 100,
+        "numerador": 532,
+        "denominador": 1285
+      },
+      {
+        "descricao": "Densidade global de infecção urinária por 1.000 pacientes-dia",
+        "percentil10": 0.2,
+        "percentil25": 0.5,
+        "percentil50": 1,
+        "percentil75": 1.8,
+        "percentil90": 4.6,
+        "limiteEndemico": 4,
+        "constante": 1000,
+        "numerador": 2,
+        "denominador": 1285
+      },
+      {
+        "descricao": "Densidade de infecção urinária associada a sonda vesical de demora",
+        "percentil10": 0,
+        "percentil25": 0,
+        "percentil50": 0,
+        "percentil75": 3.3,
+        "percentil90": 7.5,
+        "limiteEndemico": 2.1,
+        "constante": 1000,
+        "numerador": 1,
+        "denominador": 696
+      },
+      {
+        "descricao": "Taxa de utilização de sonda vesical de demora",
+        "percentil10": 29,
+        "percentil25": 42,
+        "percentil50": 53,
+        "percentil75": 64,
+        "percentil90": 75,
+        "limiteEndemico": 65,
+        "constante": 100,
+        "numerador": 696,
+        "denominador": 0
+      }
+  ],
+  "benchmarkReferencia": "Essa é a referência utilizada. ",
+  "dadoshospital": 
+  {
+    "nome": "Hospital teste processo seletivo",
+    "sigla": "HTPS"
+  }
+}

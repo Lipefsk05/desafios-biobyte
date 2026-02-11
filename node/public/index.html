@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Relatório</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; }
+    button { padding: .75rem 1rem; border: 0; border-radius: .5rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Relatórios</h1>
+  <button id="btnGerar">Gerar relatório em R</button>
+  <p id="status" aria-live="polite"></p>
+
+  <script>
+    const btn = document.getElementById('btnGerar');
+    const statusEl = document.getElementById('status');
+
+    btn.addEventListener('click', async () => {
+      statusEl.textContent = 'Gerando PDF...';
+      try {
+        const resp = await fetch('/relatorios/pdf', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({}) });
+        if (!resp.ok) throw new Error('Falha ao gerar');
+        const blob = await resp.blob();
+        const url = URL.createObjectURL(blob);
+        window.open(url, '_blank');
+        setTimeout(() => URL.revokeObjectURL(url), 60_000);
+        statusEl.textContent = 'PDF aberto em nova aba.';
+      } catch (e) {
+        console.error(e);
+        statusEl.textContent = 'Erro ao gerar/abrir o PDF.';
+      }
+    });
+  </script>
+</body>
+</html>
